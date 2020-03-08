@@ -19,19 +19,31 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/views/About.vue']
     delete files['src/components/HelloWorld.vue']
     if (options.module === 'PC') {
+      console.log(files)
       files['src/main.js'] = files['src/main.pc.js']
+      files['src/utils/axios.js'] = files['src/utils/axios.pc.js']
+      files['babel.config.js'] = files['babel.config.pc.js']
       delete files['src/utils/rem.js']
     } else if (options.module === 'mobile') {
       files['src/main.js'] = files['src/main.mobile.js']
+      files['src/utils/axios.js'] = files['src/utils/axios.mobile.js']
+      files['babel.config.js'] = files['babel.config.mobile.js']
     }
     delete files['src/main.pc.js']
     delete files['src/main.mobile.js']
+    delete files['src/utils/axios.pc.js']
+    delete files['src/utils/axios.mobile.js']
+    delete files['babel.config.pc.js']
+    delete files['babel.config.mobile.js']
   })
 
   if (options.module === 'PC') {
     api.extendPackage({
       dependencies: {
         'element-ui': '^2.12.0'
+      },
+      devDependencies: {
+        'babel-plugin-component': '^1.1.1'
       }
     })
   } else if (options.module === 'mobile') {

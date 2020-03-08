@@ -1,7 +1,9 @@
 # custome-vue-cli
-Dead simple Vue preset template for learning use.
+
+vue 模板.
 
 # Usage
+
 ```
  vue create --preset .\custom-vue-cli <project-name>
 ```

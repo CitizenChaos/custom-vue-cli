@@ -1,20 +1,6 @@
 {
-  "name": "vue-preset-template",
+  "name": "custom-vue-cli",
   "version": "0.1.0",
-  "description": "Dead simple Vue preset template for learning use.",
-  "main": "prompts.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/savokiss/vue-preset-template.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/savokiss/vue-preset-template/issues"
-  },
-  "homepage": "https://github.com/savokiss/vue-preset-template#readme"
+  "description": "",
+  "main": "prompts.js"
 }
