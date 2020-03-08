@@ -105,10 +105,40 @@ a {
 }
 html,
 body {
-  -webkit-text-size-adjust: 100% !important;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
-  width: 100% !important;
-  overflow-x: hidden !important;
-  overflow-y: scroll;
+  font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
+}
+
+// 清除浮动
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+// 浮动
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+// 超出一行显示省略号
+.ellipsis-1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
