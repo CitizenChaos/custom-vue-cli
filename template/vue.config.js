@@ -2,10 +2,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 let publicPath
 if (process.env.VUE_APP_DEPLOY_MODE === 'development' || process.env.VUE_APP_DEPLOY_MODE === 'test') {
   // 为开发环境与测试环境修改公共路径
-  publicPath = '/test/cmsadmin/'
+  publicPath = '/test/index/'
 } else if (process.env.VUE_APP_DEPLOY_MODE === 'production') {
   // 为生产环境修改公共路径
-  publicPath = '/cmsadmin/'
+  publicPath = '/index/'
 }
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = ['js', 'css']
@@ -37,12 +37,12 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/cmstest': {
-        target: 'http://cmstest.fooww.com',
+      '/example': {
+        target: 'http://xxx.com',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
-          '^/cmstest': '/'
+          '^/example': '/'
         }
       }
     }

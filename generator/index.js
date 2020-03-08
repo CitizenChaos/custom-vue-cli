@@ -5,22 +5,27 @@ module.exports = (api, options, rootOptions) => {
       'build-test': 'vue-cli-service build --mode test'
     },
     dependencies: {
-      'axios': '^0.19.0',
-      'compression-webpack-plugin': '^3.0.0',
-      'element-ui': '^2.12.0'
+      'axios': '^0.19.0'
+    },
+    devDependencies: {
+      'compression-webpack-plugin': '^3.0.0'
     }
   })
 
+  if (options.module === 'PC') {
+    api.extendPackage({
+      dependencies: {
+        'element-ui': '^2.12.0'
+      }
+    })
+  } else if (options.module === 'mobile') {
+    api.extendPackage({
+      dependencies: {
+        'vant': '^2.4.7'
+      }
+    })
+  }
+
   // 复制并用 ejs 渲染 `./template` 内所有的文件
   api.render('../template')
-
-  if (options.module === 'module1') {
-    // options.module 可以访问上面问题数组的第一个对象的值，默认为: 'module0'
-    console.log(`Your choice is ${options.module}`)
-  }
-
-  if (options.moduleName === 'myModule') {
-    // options.moduleName 可以访问到用户从控制台输入的文字
-    console.log(`Your input is ${options.moduleName}`)
-  }
 }
