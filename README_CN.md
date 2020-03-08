@@ -11,6 +11,6 @@
 5. PC 端 UI 框架：elementUI
 6. 移动端 UI 框架： vant
 
-# 使用方式
+## 使用方式
 
 与`custom-vue-cli`同级目录下执行`vue create --preset .\custom-vue-cli <project-name>`
