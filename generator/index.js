@@ -12,31 +12,6 @@ module.exports = (api, options, rootOptions) => {
     }
   })
 
-  // 复制并用 ejs 渲染 `./template` 内所有的文件
-  api.render('../template')
-
-  api.render((files, render) => {
-    delete files['src/views/About.vue']
-    delete files['src/components/HelloWorld.vue']
-    if (options.module === 'PC') {
-      console.log(files)
-      files['src/main.js'] = files['src/main.pc.js']
-      files['src/utils/axios.js'] = files['src/utils/axios.pc.js']
-      files['babel.config.js'] = files['babel.config.pc.js']
-      delete files['src/utils/rem.js']
-    } else if (options.module === 'mobile') {
-      files['src/main.js'] = files['src/main.mobile.js']
-      files['src/utils/axios.js'] = files['src/utils/axios.mobile.js']
-      files['babel.config.js'] = files['babel.config.mobile.js']
-    }
-    delete files['src/main.pc.js']
-    delete files['src/main.mobile.js']
-    delete files['src/utils/axios.pc.js']
-    delete files['src/utils/axios.mobile.js']
-    delete files['babel.config.pc.js']
-    delete files['babel.config.mobile.js']
-  })
-
   if (options.module === 'PC') {
     api.extendPackage({
       dependencies: {
@@ -53,4 +28,28 @@ module.exports = (api, options, rootOptions) => {
       }
     })
   }
+
+  // 复制并用 ejs 渲染 `./template` 内所有的文件
+  api.render('../template')
+
+  api.render((files, render) => {
+    delete files['src/views/About.vue']
+    delete files['src/components/HelloWorld.vue']
+    if (options.module === 'PC') {
+      files['babel.config.js'] = files['babel.config.pc.js']
+      files['src/main.js'] = files['src/main.pc.js']
+      files['src/utils/axios.js'] = files['src/utils/axios.pc.js']
+      delete files['src/utils/rem.js']
+    } else if (options.module === 'mobile') {
+      files['babel.config.js'] = files['babel.config.mobile.js']
+      files['src/main.js'] = files['src/main.mobile.js']
+      files['src/utils/axios.js'] = files['src/utils/axios.mobile.js']
+    }
+    delete files['src/main.pc.js']
+    delete files['src/main.mobile.js']
+    delete files['src/utils/axios.pc.js']
+    delete files['src/utils/axios.mobile.js']
+    delete files['babel.config.pc.js']
+    delete files['babel.config.mobile.js']
+  })
 }
