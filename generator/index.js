@@ -12,7 +12,7 @@ module.exports = (api, options, rootOptions) => {
     }
   })
 
-  if (options.module === 'PC') {
+  if (options.module === 'pc') {
     api.extendPackage({
       dependencies: {
         'element-ui': '^2.12.0'
@@ -35,7 +35,7 @@ module.exports = (api, options, rootOptions) => {
   api.render((files, render) => {
     delete files['src/views/About.vue']
     delete files['src/components/HelloWorld.vue']
-    if (options.module === 'PC') {
+    if (options.module === 'pc') {
       files['babel.config.js'] = files['babel.config.pc.js']
       files['src/main.js'] = files['src/main.pc.js']
       files['src/utils/axios.js'] = files['src/utils/axios.pc.js']
