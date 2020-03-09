@@ -1,6 +1,13 @@
 {
   "name": "custom-vue-cli",
   "version": "0.1.0",
-  "description": "",
-  "main": "prompts.js"
+  "description": "Quickly generate vue projects, including PC and mobile.",
+  "main": "prompts.js",
+  "scripts": {},
+  "author": "https://github.com/CitizenChaos/custom-vue-cli",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CitizenChaos/custom-vue-cli.git"
+  }
 }
