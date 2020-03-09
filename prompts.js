@@ -7,6 +7,6 @@ module.exports = [
       { name: 'PC端', value: 'pc' },
       { name: '移动端', value: 'mobile' }
     ],
-    default: 'pc',
+    default: 'pc'
   }
 ]
