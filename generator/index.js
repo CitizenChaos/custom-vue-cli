@@ -7,7 +7,8 @@ module.exports = (api, options, rootOptions) => {
       'push-production': 'node ./shell.js production'
     },
     dependencies: {
-      axios: '^0.19.0'
+      axios: '^0.19.0',
+      shelljs: '^0.8.3'
     },
     devDependencies: {
       'compression-webpack-plugin': '^3.0.0'
