@@ -12,15 +12,8 @@ _axios.isCancel = axios.isCancel
 _axios.all = axios.all
 // let pageLoading
 const pageAxiosList = new Set()
-const environment = process.env.VUE_APP_DEPLOY_MODE
 _axios.interceptors.request.use(
   function(config) {
-    if (environment === 'development' || environment === 'test') {
-      config.url = `/test${config.url}`
-    } else if (environment === 'production') {
-      config.url = `/api${config.url}`
-    }
-
     if (!pageAxiosList.size) {
       // axios开始
     }

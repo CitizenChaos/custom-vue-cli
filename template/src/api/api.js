@@ -1,5 +1,12 @@
 import request from '../utils/axios'
 
+const environment = process.env.VUE_APP_DEPLOY_MODE
+let prefix
+if (environment === 'development' || environment === 'test') {
+  prefix = '/test'
+} else if (environment === 'production') {
+  prefix = '/api'
+}
 /**
  * get请求示例
  *
@@ -7,9 +14,9 @@ import request from '../utils/axios'
  * @param {*} param
  * @returns
  */
-export function getExample (param) {
+export function getExample(param) {
   return request({
-    url: `/xxx`,
+    url: `${prefix}/xxx`,
     method: 'GET',
     params: {
       param
@@ -24,9 +31,9 @@ export function getExample (param) {
  * @param {*} param
  * @returns
  */
-export function postExample (param) {
+export function postExample(param) {
   return request({
-    url: `/xxx`,
+    url: `${prefix}/xxx`,
     method: 'POST',
     data: {
       param
