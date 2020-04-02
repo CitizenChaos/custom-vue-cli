@@ -25,6 +25,9 @@ module.exports = (api, options, rootOptions) => {
     api.extendPackage({
       dependencies: {
         vant: '^2.4.7'
+      },
+      devDependencies: {
+        'babel-plugin-import': '^1.13.0'
       }
     })
   }
