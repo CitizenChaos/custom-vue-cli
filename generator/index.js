@@ -2,10 +2,13 @@ module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
     scripts: {
-      'build-test': 'vue-cli-service build --mode test'
+      'build-test': 'vue-cli-service build --mode test',
+      'push-test': 'node ./shell.js test',
+      'push-production': 'node ./shell.js production'
     },
     dependencies: {
-      axios: '^0.19.0'
+      axios: '^0.19.0',
+      shelljs: '^0.8.3'
     },
     devDependencies: {
       'compression-webpack-plugin': '^3.0.0'
