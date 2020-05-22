@@ -3,7 +3,14 @@ module.exports = {
     'no-alert': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    "space-before-function-paren": ["error", "never"]
+    'space-before-function-paren': [
+      'warn',
+      {
+        named: 'never',
+        asyncArrow: 'always',
+        anonymous: 'never'
+      }
+    ]
   },
   root: true,
   env: {
