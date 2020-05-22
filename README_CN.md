@@ -2,7 +2,7 @@
 
 快速生成 vue 项目，包括 PC 端与移动端
 
-## 说明：
+## 说明
 
 1. 默认开启 router、vuex、less、包管理器为 npm
 2. 统一格式化样式：tab 宽度 2 空格、句尾不加分号、使用单引号
@@ -13,4 +13,11 @@
 
 ## 使用方式
 
-与`custom-vue-cli`同级目录下执行`vue create --preset .\custom-vue-cli <project-name>`
+方式 1：
+
+- 直接使用命令 `vue create --preset CitizenChaos/custom-vue-cli <project-name>`
+
+方式 2：
+
+- `git clone https://github.com/CitizenChaos/custom-vue-cli.git`
+- 在 `custom-vue-cli` 同级目录下执行 `vue create --preset .\custom-vue-cli <project-name>`

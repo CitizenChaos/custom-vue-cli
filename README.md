@@ -4,7 +4,7 @@
 
 Quickly generate vue projects, including PC and mobile.
 
-## Description：
+## Description
 
 1. Router, vuex, less, npm are enabled by default
 2. Uniform formatting style: tab width 2 spaces, no semicolons, single quotes
@@ -15,4 +15,11 @@ Quickly generate vue projects, including PC and mobile.
 
 ## Usage
 
-Execute `vue create --preset .\custom-vue-cli <project-name>` in the same directory as `custom-vue-cli`
+Way 1:
+
+- Execute `vue create --preset CitizenChaos/custom-vue-cli <project-name>`
+
+Way 2:
+
+- `git clone https://github.com/CitizenChaos/custom-vue-cli.git`
+- Execute `vue create --preset .\custom-vue-cli <project-name>` in the same directory as `custom-vue-cli`
