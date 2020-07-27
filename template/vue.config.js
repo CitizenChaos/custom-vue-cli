@@ -2,7 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 let publicPath
 if (
   process.env.VUE_APP_DEPLOY_MODE === 'development' ||
-  process.env.VUE_APP_DEPLOY_MODE === 'test'
+  process.env.VUE_APP_DEPLOY_MODE === 'testing'
 ) {
   // 为开发环境与测试环境修改公共路径
   publicPath = '/test/index/'

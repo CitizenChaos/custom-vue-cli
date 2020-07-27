@@ -2,7 +2,7 @@ import request from '../utils/axios'
 
 const environment = process.env.VUE_APP_DEPLOY_MODE
 let prefix
-if (environment === 'development' || environment === 'test') {
+if (environment === 'development' || environment === 'testing') {
   prefix = '/test'
 } else if (environment === 'production') {
   prefix = '/api'
